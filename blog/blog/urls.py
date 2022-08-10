@@ -19,6 +19,7 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from categories.api.router import router_categories
 from post.api.router import router_post
+from coments.api.router import router_comments
 
 
 
@@ -42,5 +43,6 @@ urlpatterns = [
     path('recdocs/', schema_view.with_ui('redoc',cache_timeout=0), name='schema-redoc'),
     path('api/',include('users.api.router')),
     path('api/', include(router_categories.urls)),
-    path('api/', include(router_post.urls))
+    path('api/', include(router_post.urls)),
+    path('api/', include(router_comments.urls))
 ]
